@@ -1,10 +1,18 @@
-# Getting Started
+---
+sidebar_position: 1
+---
+
+# Firebase setup
+
+:::info
+You need a Firebase account to use Firebase. You can create one [here](https://console.firebase.google.com/u/3/).
+:::
 
 In order to use Firebase with your app we need to setup a few things. 
 
 You can find the whole documentation [here](https://firebase.google.com/docs/flutter/setup?platform=ios)
 
-1. We need a Firebase account and call 
+1. We need to login to our Firebase account.
 ```
 firebase login
 ````

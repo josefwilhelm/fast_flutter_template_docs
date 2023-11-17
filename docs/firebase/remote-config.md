@@ -38,3 +38,11 @@ class RemoteConfigService {
   bool get showOnboarding => remoteConfig.getBool('showOnboarding');
 }
 ```
+
+## Firebase Console
+
+In your [Firebase Console](https://console.firebase.google.com/u/3/project) you can find the Remote Config under `Build > Remote Config`.
+
+There you need to add the value with the `key` you also define in your app. In this case `showOnboarding`.
+
+![Remote Config](assets/remote-config.png)

@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/fav-green.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -59,7 +59,7 @@ const config = {
         title: 'Fast Flutter Documentation',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/fav-green.png',
         },
 
       },
