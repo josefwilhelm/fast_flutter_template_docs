@@ -5,11 +5,14 @@ sidebar_position: 1
 
 # Getting started
 
+:::info
+As this template is for developers, I assume you already have Flutter installed. If not, you can find the installation instructions [here](https://flutter.dev/docs/get-started/install).
+:::
+
 ## Introduction
 
-This is a starter kit for Flutter. 
-
-But let's get you started. 
+Hey there,
+Thanks for using my template. I hope it will help you to build your app faster. But no more talking, let's get started.
 
 ### First, you need to clone the repo. 
 
