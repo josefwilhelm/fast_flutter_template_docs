@@ -21,7 +21,19 @@ git clone git@github.com:josefwilhelm/fast_flutter_template.git [YOUR_APP_NAME]
 cd [YOUR_APP_NAME]
 ```
 
+### Flutter version
+
+This template is built with Flutter 3.16.0. 
+
+I recommend using fvm to manage your Flutter versions. You can find more information [here](elements/fvm.md).
+
 ### Some code is generated using [build_runner](https://pub.dev/packages/build_runner).
+
+First we need to install the dependencies:
+
+```bash
+flutter pub get
+```
 
 Make sure to run this before you run the app:
 

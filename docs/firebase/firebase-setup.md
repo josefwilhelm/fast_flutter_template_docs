@@ -12,22 +12,30 @@ In order to use Firebase with your app we need to setup a few things.
 
 You can find the whole documentation [here](https://firebase.google.com/docs/flutter/setup?platform=ios)
 
-1. We need to login to our Firebase account.
+1. Install the Firebase CLI
+
+    Follow the instructions [here](https://firebase.google.com/docs/cli#setup_update_cli)
+
+
+2. We need to login to our Firebase account.
+
 ```
 firebase login
 ````
 
-2. As we will use the Firebase CLI to set up a lot things we need to install it 
+3. As we will use the Firebase CLI to set up a lot things we need to install it 
+
+
 ```
 dart pub global activate flutterfire_cli
 ```
 
-3. Now we can connect our project with Firebase 
+4. Now we can connect our project with Firebase 
 ```
 flutterfire configure
 ```
 
-4. Now you can create a new project or use an existing one. The following picture shows how it's done with a new project. 
+5. Now you can create a new project or use an existing one. The following picture shows how it's done with a new project. 
 
 ```shell
 user@users-macbook fast_flutter_template % flutterfire configure
@@ -47,7 +55,7 @@ i Registered a new Firebase web app on Firebase project best-meditation-app-2023
 
 ```
 
-5. If we now have a look at the [Console](https://console.firebase.google.com/u/3/) we will find the project there. 
+6. If we now have a look at the [Console](https://console.firebase.google.com/u/3/) we will find the project there. 
 
 ![Firebase Console](assets/firebase-console.png)
 
