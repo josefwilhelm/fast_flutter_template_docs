@@ -23,25 +23,34 @@ cd [YOUR_APP_NAME]
 
 ### Flutter version
 
-This template is built with Flutter 3.16.0. 
+:::info
+
+This template is built and tested with Flutter **3.16.0. **
+
+:::
+
 
 I recommend using fvm to manage your Flutter versions. You can find more information [here](elements/fvm.md).
 
-### Some code is generated using [build_runner](https://pub.dev/packages/build_runner).
-
-First we need to install the dependencies:
+### First fetch the dependencies
 
 ```bash
 flutter pub get
 ```
 
-Make sure to run this before you run the app:
-
-    flutter pub run build_runner build --delete-conflicting-outputs
 
 ### Then we need to set up Firebase. 
 
 Follow the instructions [here](/firebase/firebase-setup).
+
+:::info
+
+ATTENTION: You have to enable Firebase Functions and Firebase Firestore in order to use the authentication properly. 
+
+Make sure you set up Firebase Functions before you continue. You can find the instructions [here](/firebase/firebase-setup).
+
+:::
+
 
 ### Now we can run the app. 
 
@@ -50,9 +59,23 @@ flutter run
 ```
 
 :::tip
-Your app should be running now. Below you can find some more information about the project structure and what's included.
+
+Congrats, your app will now run on your device or emulator.
+
 :::
+
 ---
+
+## Some more infos
+
+### Some code is generated using build runner.
+
+Here is the documentation for [build runner](https://pub.dev/packages/build_runner)
+
+
+If you add new models or providers you need to run the following command:
+
+    flutter pub run build_runner build --delete-conflicting-outputs
 
 ### Project structure:
 
@@ -89,7 +112,9 @@ lib
 ├── main.dart
 ```
 
-
+:::tip
+You will find a `NOTE` comments in the source code. These are sections where you have to fill in API keys or similiar.
+:::
 
 
 ### What's included

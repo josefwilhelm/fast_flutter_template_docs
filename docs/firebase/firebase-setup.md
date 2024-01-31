@@ -30,12 +30,16 @@ firebase login
 dart pub global activate flutterfire_cli
 ```
 
-4. Now we can connect our project with Firebase 
+:::info
+Adjust your app identifiers in `ios/Runner.xcodeproj/project.pbxproj` and `android/app/build.gradle` before you continue.
+:::
+
+1. Now we can connect our project with Firebase 
 ```
 flutterfire configure
 ```
 
-5. Now you can create a new project or use an existing one. The following picture shows how it's done with a new project. 
+1. Now you can create a new project or use an existing one. The following picture shows how it's done with a new project. 
 
 ```shell
 user@users-macbook fast_flutter_template % flutterfire configure
@@ -63,4 +67,38 @@ i Registered a new Firebase web app on Firebase project best-meditation-app-2023
 --- 
 
 
-This is all the set up we need to let our app run. 
+## Functions & Firestore
+
+Enable Firebase Functions and Firestore in the Firebase Console. 
+
+Here is a guide for Firebase Functions: [Firebase Functions](https://firebase.google.com/docs/functions/get-started?gen=1st)
+
+Here is a guide for Firestore: [Firestore](https://firebase.google.com/docs/firestore/quickstart?gen=1st)
+
+Run 
+```
+firebase init
+```
+
+Select `Functions` and `Firestore` and select your project.
+
+![Firebase Console](assets/firebase-init.png)
+
+Follow the instructions. And choose typescript
+
+![Firebase Console](assets/firebase-functions-language.png)
+
+
+### Deploy the functions
+
+Now we can upload the functions to Firebase. 
+
+```
+firebase deploy --only functions
+```
+
+
+
+
+
+
