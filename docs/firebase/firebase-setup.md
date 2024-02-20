@@ -42,8 +42,7 @@ flutterfire configure
 1. Now you can create a new project or use an existing one. The following picture shows how it's done with a new project. 
 
 ```shell
-user@users-macbook fast_flutter_template % flutterfire configure
-
+user@users-macbook fast_flutter_template % flutterfire configu
 i Found 8 Firebase projects.                                                                                                                                                                                                                                                        
 ✔ Select a Firebase project to configure your Flutter application with · <create a new project>                                                                                                                                                                                     
 ✔ Enter a project id for your new Firebase project (e.g. my-cool-project) · best-meditation-app-2023                                                                                                                                                                                

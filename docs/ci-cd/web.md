@@ -1,3 +1,0 @@
-# Web Workflow
-
-## Getting Started
