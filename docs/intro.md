@@ -32,23 +32,14 @@ This template is built and tested with Flutter **3.16.0. **
 
 I recommend using fvm to manage your Flutter versions. You can find more information [here](elements/fvm.md).
 
-### First fetch the dependencies
+### Quick start
 
-```bash
-flutter pub get
-```
-
-
-### Then we need to set up Firebase. 
-
-Follow the instructions [here](/firebase/firebase-setup).
-
+1. Fetch the dependencies with `flutter pub get`.
+2. Then we need to set up Firebase. Follow the instructions [here](/firebase/firebase-setup).
+   
 :::info
-
 ATTENTION: You have to enable Firebase Functions and Firebase Firestore in order to use the authentication properly. 
-
 Make sure you set up Firebase Functions before you continue. You can find the instructions [here](/firebase/firebase-setup).
-
 :::
 
 

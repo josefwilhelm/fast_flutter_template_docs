@@ -4,20 +4,57 @@ sidebar_position: 1
 
 # Firebase setup
 
-:::info
+<!-- :::info
 You need a Firebase account to use Firebase. You can create one [here](https://console.firebase.google.com/u/3/).
-:::
+::: -->
 
 In order to use Firebase with your app we need to setup a few things. 
-
 You can find the whole documentation [here](https://firebase.google.com/docs/flutter/setup?platform=ios)
 
-1. Install the Firebase CLI
+:::info
+A few steps are required to set up Firebase.
+1. Create an account
+2. Create a new project
+3. Add your app to the project
+4. Enable billing in order to use Firebase Functions (you will still be in the free tier, but Functions won't work otherwise)
+5. Enable Firebase Functions and Firestore
+6. Deploy the functions and firestore rules
+::: 
 
-    Follow the instructions [here](https://firebase.google.com/docs/cli#setup_update_cli)
+## The steps in detail
 
+### 1. Create an account
+- Just go to the [Firebase Console](https://console.firebase.google.com/)
 
-2. We need to login to our Firebase account.
+### 2. Create a new project
+
+- Follow the instructions [here](https://firebase.google.com/docs/cli#setup_update_cli)
+- Or do it in the next step with the Firebase CLI
+
+### 3. Add your app to the project
+
+1. Install the Firebase CLI. Follow the instructions [here](https://firebase.google.com/docs/flutter/setup?platform=ios)
+2. **Important** Adjust your app identifiers in `ios/Runner.xcodeproj/project.pbxproj` and `android/app/build.gradle` before you continue.
+3. Run `flutterfire configure` in your project directory. You can create a new project or use an existing one. The following picture shows how it's done with a new project. This step will add the apps to your Firebase project with the app identifiers you set in the previous step.
+
+```shell
+user@users-macbook fast_flutter_template % flutterfire configure
+i Found 8 Firebase projects.                                                                                                                                                                                                                                                        
+✔ Select a Firebase project to configure your Flutter application with · <create a new project>                                                                                                                                                                                     
+✔ Enter a project id for your new Firebase project (e.g. my-cool-project) · best-meditation-app-2023                                                                                                                                                                                
+i New Firebase project best-meditation-app-2023 created successfully.                                                                                                                                                                                                               
+✔ Which platforms should your configuration support (use arrow keys & space to select)? · android, ios, web                                                                                                                                                                         
+i Firebase android app com.example.fast_flutter_template is not registered on Firebase project best-meditation-app-2023.                                                                                                                                                            
+i Registered a new Firebase android app on Firebase project best-meditation-app-2023.                                                                                                                                                                                               
+i Firebase ios app com.example.fastFlutterTemplate is not registered on Firebase project best-meditation-app-2023.                                                                                                                                                                  
+i Registered a new Firebase ios app on Firebase project best-meditation-app-2023.                                                                                                                                                                                                   
+i Firebase web app fast_flutter_template (web) is not registered on Firebase project best-meditation-app-2023.                                                                                                                                                                      
+i Registered a new Firebase web app on Firebase project best-meditation-app-2023.                                                                                                                                                                                                   
+✔ The files android/build.gradle & android/app/build.gradle will be updated to apply Firebase configuration and gradle build plugins. Do you want to continue? · yes                                                                                                                                                                                                         
+
+```
+
+1. We need to login to our Firebase account.
 
 ```
 firebase login
@@ -58,43 +95,57 @@ i Registered a new Firebase web app on Firebase project best-meditation-app-2023
 
 ```
 
-6. If we now have a look at the [Console](https://console.firebase.google.com/u/3/) we will find the project there. 
+### 4. Enable billing
+1. Go to the [Firebase Console](https://console.firebase.google.com/u/3/)
+2. Select your project
+3. Go to `Project settings`
+4. Go to `Usage and billing`
+5. Enable billing (Blaze plan)
 
-![Firebase Console](assets/firebase-console.png)
 
+### 5. Enable Firebase Functions and Firestore
+1. Run `firebase init` in your project directory
+2. Select `Functions` and `Firestore` and select your project 
+3. Follow the instructions in command line.
+   1. For Functions: See the settings to select below. 
+   2. For Firestore: Choose the default settings.
+4. Go to the Firebase Console and check if Functions and Firestore are enabled.
+5. If we now have a look at the [Console](https://console.firebase.google.com/u/3/) we will find the project there. 
 
---- 
+Functions settings:
 
+```shell
+=== Functions Setup
 
-## Functions & Firestore
+Detected existing codebase(s): default
 
-Enable Firebase Functions and Firestore in the Firebase Console. 
+? Would you like to initialize a new codebase, or overwrite an existing one? Overwrite
 
-Here is a guide for Firebase Functions: [Firebase Functions](https://firebase.google.com/docs/functions/get-started?gen=1st)
+Overwriting codebase default...
 
-Here is a guide for Firestore: [Firestore](https://firebase.google.com/docs/firestore/quickstart?gen=1st)
+? What language would you like to use to write Cloud Functions? TypeScript
+? Do you want to use ESLint to catch probable bugs and enforce style? Yes
+? File functions/package.json already exists. Overwrite? No
+i  Skipping write of functions/package.json
+? File functions/.eslintrc.js already exists. Overwrite? No
+i  Skipping write of functions/.eslintrc.js
+? File functions/tsconfig.json already exists. Overwrite? No
+i  Skipping write of functions/tsconfig.json
+? File functions/tsconfig.dev.json already exists. Overwrite? No
+i  Skipping write of functions/tsconfig.dev.json
+? File functions/src/index.ts already exists. Overwrite? No
+i  Skipping write of functions/src/index.ts
+? File functions/.gitignore already exists. Overwrite? No
+i  Skipping write of functions/.gitignore
+? Do you want to install dependencies with npm now? Yes
 
-Run 
 ```
-firebase init
-```
-
-Select `Functions` and `Firestore` and select your project.
-
-![Firebase Console](assets/firebase-init.png)
-
-Follow the instructions. And choose typescript
-
-![Firebase Console](assets/firebase-functions-language.png)
 
 
-### Deploy the functions
 
-Now we can upload the functions to Firebase. 
+### 6. Deploy the functions and firestore rules
 
-```
-firebase deploy --only functions
-```
+1. Run `firebase deploy` in your project directory
 
 
 
