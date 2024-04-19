@@ -10,6 +10,14 @@ Here is the documentation for Riverpod: [Riverpod](https://riverpod.dev/)
 I wrote here about why I use Riverpod. 
 https://josef-wilhelm.beehiiv.com/p/why-i-use-riverpod-as-state-management
 
+### Invalidating Providers on Logout
+
+Make sure to invalidate all providers that depend on the user state when the user signs out.
+You can do this by calling `ref.invalidate()` on the provider.
+
+Do this in the `logout` method in the `lib/features/authentication/providers/auth_provider.dart` file.
+
+
 ### Logging
 
 Logging is enabled in debug mode.
