@@ -1,5 +1,7 @@
 
-# iOS Workflow
+# iOS CI Workflow
+
+[Here](https://www.loom.com/share/7d73f1fe6f9746d88af073f3c36a435a) is a video that explains the setup of the iOS CI workflow.
 
 ## Getting Started
 
@@ -10,6 +12,12 @@ It works with Fastlane and uses the [fastlane-match](https://docs.fastlane.tools
 Before you can use it, you need to set up Fastlane and add the required secrets to your GitHub repository.
 
 Adjust the `Appfile`, `Fastfile` and `Matchfile` to your needs. You can find them in the `fastlane` folder.
+
+### Match
+
+Match is a tool that allows you to share certificates and provisioning profiles between members of a team. It stores the certificates and profiles in a git repository.
+
+The documentation can be found [here](https://codesigning.guide/).
 
 ### App Store Connect API Key
 
@@ -27,6 +35,8 @@ Here are the steps
 ```
 
 ### Secrets
+
+Add the following secrets to your GitHub repository. You can find them in the repository settings under `Secrets and variables`. Choose 'Actions' and add the secrets.
 
 1. `APP_STORE_CONNECT_API_KEY_ISSUER_ID`: Issuer ID on APP Store Connect API page
 2. `APP_STORE_CONNECT_API_KEY_KEY`: The actual Key base64 encoded
